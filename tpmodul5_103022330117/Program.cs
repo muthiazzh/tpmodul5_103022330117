@@ -1,11 +1,39 @@
-﻿using System;
 
-public class HaloGeneric
+﻿//using System;
+
+//public class HaloGeneric
+//{
+//   
+//    public void SapaUser<T>(T user)
+//    {
+//        Console.WriteLine($"Halo user {user}");
+//    }
+//}
+
+//class Program
+//{
+//    static void Main()
+//    {
+//        HaloGeneric halo = new HaloGeneric();
+//        halo.SapaUser("Muthi");
+//    }
+//}
+
+using System;
+
+public class DataGeneric<T>
 {
+    private T data;
 
-    public void SapaUser<T>(T user)
+    public DataGeneric(T data)
     {
-        Console.WriteLine($"Halo user {user}");
+        this.data = data;
+    }
+
+    public void PrintData()
+    {
+        Console.WriteLine($"Data yang tersimpan adalah: {data}");
+
     }
 }
 
@@ -13,8 +41,8 @@ class Program
 {
     static void Main()
     {
-        HaloGeneric halo = new HaloGeneric();
+        DataGeneric<string> nimData = new DataGeneric<string>("103022330117");
 
-        halo.SapaUser("Muthi");
+        nimData.PrintData();
     }
 }
